@@ -29,7 +29,7 @@ public:
 
     void insert()   //membuat fungsi insert
     {
-        int x; 
+        int x;
         cout << "Masukkan Nilai: ";
         cin >> x;
 
@@ -43,8 +43,28 @@ public:
         newNode->leftchild = nullptr;
         newNode->rightchild = nullptr;
 
+        // Step 4: Locate the node which will be the parent of the node to be inserted
+        Node *parent = nullptr;
+        Node *currentNode = nullptr;
+        search(x, parent, currentNode);
+
+        
         
     }
-}
 
- 
+
+    void search(int element, Node *&parent, Node *&currentNode) //membuat fungsi search node
+    {
+        // This Function searches the currentNode of the specified Node as well as the current Node of its parent
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
+};
