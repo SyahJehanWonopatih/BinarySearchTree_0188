@@ -94,4 +94,20 @@ public:
                 currentNode = currentNode->rightchild;
         }
     }
+
+
+void inorder(Node *ptr) //membuat fungsi inorder traversal
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+            return;
+
+        inorder(ptr->leftchild);
+        cout << ptr->info << " ";
+        inorder(ptr->rightchild);
+    }    
 };
