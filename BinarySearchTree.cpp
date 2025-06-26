@@ -27,7 +27,11 @@ public:
         ROOT = nullptr; //Inisialisasi ROOT ke NULL
     }
 
-    
-};
+    void insert()   //membuat fungsi insert
+    {
+     
+      
+    }
+}
 
  
