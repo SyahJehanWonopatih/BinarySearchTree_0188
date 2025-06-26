@@ -141,4 +141,9 @@ public:
         cout << ptr->info << " ";
     }    
 
+    bool isEmpty() //membuat fungsi untuk mengecek apakah tree kosong
+    {
+        // Checks if the tree is empty
+        return ROOT == nullptr;
+    }
 };
