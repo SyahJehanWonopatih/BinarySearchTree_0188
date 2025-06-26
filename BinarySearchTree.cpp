@@ -96,7 +96,7 @@ public:
     }
 
 
-void inorder(Node *ptr) //membuat fungsi inorder traversal
+    void inorder(Node *ptr) //membuat fungsi inorder traversal
     {
         if (isEmpty())
         {
@@ -110,4 +110,22 @@ void inorder(Node *ptr) //membuat fungsi inorder traversal
         cout << ptr->info << " ";
         inorder(ptr->rightchild);
     }    
+
+    void preorder(Node *ptr) //fungsi preorder
+    {
+        if (isEmpty())
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+            return;
+
+        cout << ptr->info << " ";
+        preorder(ptr->leftchild);
+        preorder(ptr->rightchild);
+    }    
+
+    
+
 };
