@@ -48,23 +48,37 @@ public:
         Node *currentNode = nullptr;
         search(x, parent, currentNode);
 
-        
-        
-    }
-
-
-    void search(int element, Node *&parent, Node *&currentNode) //membuat fungsi search node
-    {
-        // This Function searches the currentNode of the specified Node as well as the current Node of its parent
-        currentNode = ROOT;
-        parent = nullptr;
-        while ((currentNode != nullptr) && (currentNode->info != element))
+        // Step 5: If parent is Null (Tree is Empty)
+        if (parent == nullptr)
         {
-            parent = currentNode;
-            if (element < currentNode->info)
-                currentNode = currentNode->leftchild;
-            else
-                currentNode = currentNode->rightchild;
+            // 5a: Mark the new node as Root
+            ROOT = newNode;
+
+            // 5b: Exit
+            return;
         }
+
+        // Step 6: if the value in the data field of new node is less than that of parent
+        if (x < parent->info)
+        {
+            // 6a: Make the left child of parent point to the new node
+            parent->leftchild = newNode;
+
+            // 6b: Exit
+            return;
+        }
+        // Step 7: if the value in the data field of the new node is greater than that of the parent
+        else if (x > parent->info)
+        {
+            // 7a: Make the right child of parent point to the new node
+            parent->rightchild = newNode;
+
+            //7b: Exit
+            return;
+        }
+        
     }
+
+
+    
 };
