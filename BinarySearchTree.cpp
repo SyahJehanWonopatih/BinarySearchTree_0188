@@ -29,8 +29,11 @@ public:
 
     void insert()   //membuat fungsi insert
     {
-     
-      
+        int x; 
+        cout << "Masukkan Nilai: ";
+        cin >> x;
+
+       
     }
 }
 
